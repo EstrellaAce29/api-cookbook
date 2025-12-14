@@ -1,140 +1,171 @@
 ---
-title: Daily Knowledge Bot
-description: A Python application that delivers interesting facts about rotating topics using the Perplexity AI API
-sidebar_position: 2
-keywords: [automation, facts, learning, scheduling, education]
+title: Examples Overview
+description: Ready-to-use applications demonstrating Perplexity Sonar API capabilities
+sidebar_position: 1
+keywords: [examples, applications, demos, sonar-api]
 ---
 
-# Daily Knowledge Bot
+# Examples Overview
 
-A Python application that delivers interesting facts about rotating topics using the Perplexity AI API. Perfect for daily learning, newsletter content, or personal education.
+Welcome to the **Perplexity Sonar API Examples** collection! These are production-ready applications that demonstrate real-world use cases of the Sonar API.
 
-## 🌟 Features
+## 🚀 Quick Start
 
-- **Daily Topic Rotation**: Automatically selects topics based on the day of the month
-- **AI-Powered Facts**: Uses Perplexity's Sonar API to generate interesting and accurate facts
-- **Customizable Topics**: Easily extend or modify the list of topics
-- **Persistent Storage**: Saves facts to dated text files for future reference
-- **Robust Error Handling**: Gracefully manages API failures and unexpected errors
-- **Configurable**: Uses environment variables for secure API key management
+Navigate to any example directory and follow the instructions in the README.md file.
 
-## 📋 Requirements
+## 📋 Available Examples
 
-- Python 3.6+
-- Required packages:
-  - requests
-  - python-dotenv
-  - (optional) logging
+### 🔍 [Fact Checker CLI](fact-checker-cli/)
 
-## 🚀 Installation
+**Purpose**: Verify claims and articles for factual accuracy  
+**Type**: Command-line tool  
+**Use Cases**: Journalism, research, content verification  
 
-1. Clone this repository or download the script
-2. Install the required packages:
+**Key Features**:
+- Structured claim analysis with ratings
+- Source citation and evidence tracking
+- JSON output for automation
+- Professional fact-checking workflow
 
+**Quick Start**:
 ```bash
-# Install from requirements file (recommended)
-pip install -r requirements.txt
-
-# Or install manually
-pip install requests python-dotenv
+cd fact-checker-cli/
+python fact_checker.py --text "The Earth is flat"
 ```
 
-3. Set up your Perplexity API key:
-   - Create a `.env` file in the same directory as the script
-   - Add your API key: `PERPLEXITY_API_KEY=your_api_key_here`
+---
 
-## 🔧 Usage
+### 🤖 [Daily Knowledge Bot](daily-knowledge-bot/)
 
-### Running the Bot
+**Purpose**: Automated daily fact delivery system  
+**Type**: Scheduled Python application  
+**Use Cases**: Education, newsletters, personal learning  
 
-Simply execute the script:
+**Key Features**:
+- Topic rotation based on calendar
+- Persistent storage of facts
+- Configurable scheduling
+- Educational content generation
 
+**Quick Start**:
 ```bash
+cd daily-knowledge-bot/
 python daily_knowledge_bot.py
 ```
 
-This will:
-1. Select a topic based on the current day
-2. Fetch an interesting fact from Perplexity AI
-3. Save the fact to a dated text file in your current directory
-4. Display the fact in the console
+---
 
-### Customizing Topics
+### 🏥 [Disease Information App](disease-qa/)
 
-Edit the `topics.txt` file (one topic per line) or modify the `topics` list directly in the script.
+**Purpose**: Interactive medical information lookup  
+**Type**: Web application (HTML/JavaScript)  
+**Use Cases**: Health education, medical reference, patient information  
 
-Example topics:
-```
-astronomy
-history
-biology
-technology
-psychology
-ocean life
-ancient civilizations
-quantum physics
-art history
-culinary science
-```
+**Key Features**:
+- Interactive browser interface
+- Structured medical knowledge cards
+- Citation tracking for medical sources
+- Standalone deployment ready
 
-### Automated Scheduling
-
-#### On Linux/macOS (using cron):
-
+**Quick Start**:
 ```bash
-# Edit your crontab
-crontab -e
-
-# Add this line to run daily at 8:00 AM
-0 8 * * * /path/to/python3 /path/to/daily_knowledge_bot.py
+cd disease-qa/
+jupyter notebook disease_qa_tutorial.ipynb
 ```
 
-#### On Windows (using Task Scheduler):
+---
 
-1. Open Task Scheduler
-2. Create a new Basic Task
-3. Set it to run daily
-4. Add the action: Start a program
-5. Program/script: `C:\path\to\python.exe`
-6. Arguments: `C:\path\to\daily_knowledge_bot.py`
+### 📊 [Financial News Tracker](financial-news-tracker/)
 
-## 🔍 Configuration Options
+**Purpose**: Real-time financial news monitoring and market analysis  
+**Type**: Command-line tool  
+**Use Cases**: Investment research, market monitoring, financial journalism  
 
-The following environment variables can be set in your `.env` file:
+**Key Features**:
+- Real-time financial news aggregation
+- Market sentiment analysis (Bullish/Bearish/Neutral)
+- Impact assessment and sector analysis
+- Investment insights and recommendations
 
-- `PERPLEXITY_API_KEY` (required): Your Perplexity API key
-- `OUTPUT_DIR` (optional): Directory to save fact files (default: current directory)
-- `TOPICS_FILE` (optional): Path to your custom topics file
-
-## 📄 Output Example
-
-```
-DAILY FACT - 2025-04-02
-Topic: astronomy
-
-Saturn's iconic rings are relatively young, potentially forming only 100 million years ago. This means dinosaurs living on Earth likely never saw Saturn with its distinctive rings, as they may have formed long after the dinosaurs went extinct. The rings are made primarily of water ice particles ranging in size from tiny dust grains to boulder-sized chunks.
+**Quick Start**:
+```bash
+cd financial-news-tracker/
+python financial_news_tracker.py "tech stocks"
 ```
 
-## 🛠️ Extending the Bot
+---
 
-Some ways to extend this bot:
-- Add email or SMS delivery capabilities
-- Create a web interface to view fact history
-- Integrate with social media posting
-- Add multimedia content based on the facts
-- Implement advanced scheduling with specific topics on specific days
+### 📚 [Academic Research Finder](research-finder/)
 
-## ⚠️ Limitations
+**Purpose**: Academic literature discovery and summarization  
+**Type**: Command-line research tool  
+**Use Cases**: Academic research, literature reviews, scholarly work  
 
-- API rate limits may apply based on your Perplexity account
-- Quality of facts depends on the AI model
-- The free version of the Sonar API has a token limit that may truncate longer responses
+**Key Features**:
+- Academic source prioritization
+- Paper citation extraction with DOI links
+- Research-focused prompting
+- Scholarly workflow integration
 
-## 📜 License
+**Quick Start**:
+```bash
+cd research-finder/
+python research_finder.py "quantum computing advances"
+```
 
-[MIT License](https://github.com/ppl-ai/api-cookbook/blob/main/LICENSE)
+## 🔑 API Key Setup
 
-## 🙏 Acknowledgements
+All examples require a Perplexity API key. You can set it up in several ways:
 
-- This project uses the Perplexity AI API (https://docs.perplexity.ai/)
-- Inspired by daily knowledge calendars and fact-of-the-day services
+### Environment Variable (Recommended)
+```bash
+export PPLX_API_KEY="your-api-key-here"
+```
+
+### .env File
+Create a `.env` file in the example directory:
+```bash
+PERPLEXITY_API_KEY=your-api-key-here
+```
+
+### Command Line Argument
+```bash
+python script.py --api-key your-api-key-here
+```
+
+## 🛠️ Common Requirements
+
+All examples require:
+- **Python 3.7+**
+- **Perplexity API Key** ([Get one here](https://docs.perplexity.ai/guides/getting-started))
+- **Internet connection** for API calls
+
+Additional requirements vary by example and are listed in each `requirements.txt` file.
+
+## 🎯 Choosing the Right Example
+
+| **If you want to...** | **Use this example** |
+|------------------------|----------------------|
+| Verify information accuracy | **Fact Checker CLI** |
+| Learn something new daily | **Daily Knowledge Bot** |
+| Look up medical information | **Disease Information App** |
+| Track financial markets | **Financial News Tracker** |
+| Research academic topics | **Academic Research Finder** |
+
+## 🤝 Contributing
+
+Found a bug or want to improve an example? We welcome contributions!
+
+1. **Report Issues**: Open an issue describing the problem
+2. **Suggest Features**: Propose new functionality or improvements
+3. **Submit Code**: Fork, implement, and submit a pull request
+
+See our [Contributing Guidelines](https://github.com/ppl-ai/api-cookbook/blob/main/CONTRIBUTING.md) for details.
+
+## 📄 License
+
+All examples are licensed under the [MIT License](https://github.com/ppl-ai/api-cookbook/blob/main/LICENSE).
+
+---
+
+**Ready to explore?** Pick an example above and start building with Perplexity's Sonar API! 🚀 
